@@ -9,7 +9,8 @@ import React, {
   StyleSheet,
   Text,
   TextInput,
-  View
+  View, 
+  Image 
 } from 'react-native';
 
 var english_german  = require('./english_german.json');
@@ -32,13 +33,13 @@ var Dictionary = React.createClass({
   },
    render: function() {
       var layout =
-          <React.View style = { styles.parent } >
+          <React.Image style = { styles.parent } source={require('./img/bg_login.png')}>
 
           <React.Text style = {styles.titlex}>
             MyDictionary
           </React.Text>
    
-              <React.Text>
+              <React.Text style = { styles.germanLabel } >
                   Type something in English:
               </React.Text>
    
@@ -63,7 +64,7 @@ var Dictionary = React.createClass({
              
 
 
-          </React.View>
+          </React.Image>
       ;
       return layout;
   },
@@ -71,25 +72,32 @@ var Dictionary = React.createClass({
 var styles  = React.StyleSheet.create({
   titlex: {
     fontSize:20, 
-    fontFamily:'Raleway-Medium' 
+    fontFamily:'Raleway-Medium', 
+    color:"#ffffff",
+    marginBottom:25,
+     
+     
 
   },
 
   parent : {
     padding:16,
-    
+    flex: 1, 
   },
    // For the Text label
     germanLabel: {
         marginTop: 20,
-        fontWeight: 'bold'
+        fontFamily:'Raleway-Medium', 
+        color:"#ffffff",
     },
  
     // For the Text meaning
     germanWord: {
         marginTop: 15,
         fontSize: 30,
-        fontStyle: 'italic'
+        fontStyle: 'italic',
+        fontFamily:'Raleway-Medium', 
+        color:"#ffffff",
     },
     counter:{
       marginTop:50,
